@@ -74,7 +74,7 @@ class DemoDataset(BaseDataset):
             source_splitext = os.path.join(source_splitext.split('/')[0], source_splitext.split('/')[2])
         
         source_parse_vis_path = os.path.join('dataset/parse_cihp', source_splitext + '_vis.png')
-        source_parse_vis = self.transforms['3'](Image.open(source_parse_vis_path))        
+        source_parse_vis = self.transforms['1'](Image.open(source_parse_vis_path))        
         source_parse_path = os.path.join('dataset/parse_cihp', source_splitext + '.png')
         source_parse = pose_utils.parsing_embedding(source_parse_path)
 
