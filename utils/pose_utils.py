@@ -152,6 +152,7 @@ def save_img(images, path):
                 images[i] = ((images[i].permute(0,2,3,1).contiguous().cpu().numpy() * 0.5 + 0.5) * 255).astype(np.uint8)
             else:
                 images[i] = images[i].cpu().numpy()
+    images[4] = np.transpose(images[4], (0, 2, 3, 1))
 
     for i in range(len(images[0])):
         img.append(np.concatenate([image[i] for image in images], axis=1))
